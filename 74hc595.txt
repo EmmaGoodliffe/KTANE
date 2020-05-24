@@ -1,0 +1,18 @@
+Q_B * | + V_CC
+Q_C * | * Q_A
+Q_D * | Data SER
+Q_E * | - ~OE
+Q_F * | Update RCLK
+Q_G * | Record SRCLK
+Q_H * | + ~SRCLR
+GND - | Parallel output Q_H'
+
++ = 5V
+
+* outputs
+
+For output LEDs:
+output - restistor - LED - GND
+
+For input buttons:
+output - button - (single) input pin
