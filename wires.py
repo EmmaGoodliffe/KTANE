@@ -20,7 +20,7 @@ def setup_wires(WIRES, TARGET, success, error, progress):
         elif pin in TARGET:
             print("Error")
             error()
-        else:
+        elif device.value == 0:
             print("Progress")
             progress()
 
