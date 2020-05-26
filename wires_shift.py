@@ -19,8 +19,9 @@ def setup(r_p, u_p, d_p, dig_pin, target):
     return run, first_values
     
 # index.py
+wires_setup = setup
 TARGET = 1
-wires_run, wires_state = setup(4, 5, 6, 12, TARGET)
+wires_run, wires_state = wires_setup(4, 5, 6, 12, TARGET)
 while True:
     wires_state, wires_success = wires_run(wires_state)
     print(wires_success)
