@@ -11,7 +11,6 @@ def set_outputs_with_string(b, r, u, d, num = 8):
     bits = b[::-1]
     while len(bits) < num:
         bits = '0' + bits
-    print(bits)
     for bit in bits:
         if bit == '0':
             d.off()
