@@ -35,3 +35,13 @@ def gen_find_button(r, u, d, digital, trigger_button):
                 return
         print('nothing was returned')
     return find_button
+
+def collect_values(r, u, d, digital):
+    results = []
+    for n in range(8):
+        string = ''.join(['0' for _ in range(n)])
+        string += '1'
+        set_outputs_with_string(string, r, u, d)
+        results.append(digital.value)
+    set_outputs_with_string('0', r, u, d)
+    return results
