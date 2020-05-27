@@ -23,7 +23,7 @@ def set_outputs_with_string(b, r, u, d, num = 8):
     u.on()
     u.off()
 
-def gen_find_button(r, u, d, digital, trigger_button):
+def gen_find_button(r, u, d, digital, trigger_button, state):
     def find_button():
         for n in range(8):
             string = ''.join(['0' for _ in range(n)])
@@ -31,7 +31,7 @@ def gen_find_button(r, u, d, digital, trigger_button):
             set_outputs_with_string(string, r, u, d)
             if digital.value == 1:
                 set_outputs_with_string('11111111', r, u, d)
-                trigger_button(n)
+                trigger_button(n, *state)
                 return
         print('nothing was returned')
     return find_button
