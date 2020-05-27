@@ -1,6 +1,6 @@
 # KTANE
 
-Raspberry Pi project based on the game *["Keep Talking and Nobody Explodes"](keeptalkinggame.com)*
+Raspberry Pi project based on the game *["Keep Talking and Nobody Explodes"](https://www.keeptalkinggame.com)*
 
 The original game describes the basic premise as:
 
