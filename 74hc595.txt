@@ -7,7 +7,7 @@ Q_G * | Record SRCLK
 Q_H * | + ~SRCLR
 GND - | Parallel output Q_H'
 
-+ = 5V
++ = 3.3V
 
 * outputs
 
