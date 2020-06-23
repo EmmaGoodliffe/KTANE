@@ -1,3 +1,5 @@
+# SPI must be enabled
+
 from busio import SPI as SPI_BUS
 from digitalio import DigitalInOut as ChipSelect
 from board import SCK, MISO, MOSI, D5 as GPIO5
