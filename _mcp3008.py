@@ -9,17 +9,17 @@ from time import sleep
 
 VOLTAGE_INPUT = 3.3
 
-# SPI bus
-spi = SPI_BUS(clock=SCK, MISO=MISO, MOSI=MOSI)
-# pin
-cs = ChipSelect(GPIO5)
-# chip
-mcp = MCP3008(spi, cs)
-# channel
-channel = AnalogIn(mcp, P0)
+def get_adc(cs_pin, channel_num):
+    spi = SPI_BUS(clock=SCK, MISO=MISO, MOSI=MOSI)
+    cs = ChipSelect(cs_pin)
+    mcp = MCP3008(spi, cs)
+    channel = AnalogIn(mcp, channel_num)
+    return channel
+
+adc = get_adc(GPIO5, P0)
 
 while True:
-    position = VOLTAGE_INPUT / channel.voltage
+    position = VOLTAGE_INPUT / adc.voltage
     position = int(position * 10) / 10 # ?
     boundary1 = 1.5
     boundary2 = 3.0
