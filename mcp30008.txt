@@ -1,0 +1,15 @@
+QA * | + V_DD
+QB * | + V_REF
+QC * | - A_GND
+QD * | 23 SCK
+QE * | 21 D_OUT
+QF * | 19 D_IN
+QG * | Chip select ~CS/SHDN
+QH * | - D_GND
+
++ = 3.3V
+
+* inputs
+
+For variable resistor:
+input - resistor centre pin
