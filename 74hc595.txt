@@ -5,7 +5,7 @@ Q_E * | - ~OE
 Q_F * | Update RCLK
 Q_G * | Record SRCLK
 Q_H * | + ~SRCLR
-GND - | Parallel output Q_H'
+GND - | Serial output Q_H'
 
 + = 3.3V
 
