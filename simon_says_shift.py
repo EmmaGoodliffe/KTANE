@@ -1,8 +1,7 @@
 from _74hc595 import get_controls, gen_find_button
 from gpiozero import DigitalInputDevice
 
-def trigger_button(n, guess_, target, leds):
-    guess = guess_.copy()
+def trigger_button(n, guess, target, leds):
     guess.append(n)
     i = len(guess) - 1
     led = leds.index(n)
@@ -20,6 +19,7 @@ def setup(r_p, u_p, d_p, dig_pin, target, leds):
     digital = DigitalInputDevice(dig_pin)
     digital.when_activated = gen_find_button(r, u, d, digital, trigger_button, [[], target, leds])
 
+# index.py
 TARGET = [0, 1]
-LEDS = [1, 0]
-setup(4, 5, 6, 12, TARGET, LEDS)
+LEDS_ENCRYPTION = [1, 0]
+setup(4, 5, 6, 12, TARGET, LEDS_ENCRYPTION)
