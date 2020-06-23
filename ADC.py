@@ -1,22 +1,24 @@
 from busio import SPI as SPI_BUS
-from digitalio import DigitalInOut as CS
+from digitalio import DigitalInOut as ChipSelect
 from board import SCK, MISO, MOSI, D5 as GPIO5
 from adafruit_mcp3xxx.mcp3008 import MCP3008, P0
 from adafruit_mcp3xxx.analog_in import AnalogIn
 from time import sleep
 
+VOLTAGE_INPUT = 3.3
+
 # SPI bus
 spi = SPI_BUS(clock=SCK, MISO=MISO, MOSI=MOSI)
 # pin
-cs = CS(GPIO5)
+cs = ChipSelect(GPIO5)
 # chip
 mcp = MCP3008(spi, cs)
 # channel
 channel = AnalogIn(mcp, P0)
 
 while True:
-    position = 3.3 / channel.voltage
-    position = int(position * 10) / 10
+    position = VOLTAGE_INPUT / channel.voltage
+    position = int(position * 10) / 10 # ?
     boundary1 = 1.5
     boundary2 = 3.0
     if position < boundary1:
